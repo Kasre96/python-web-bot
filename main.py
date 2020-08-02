@@ -3,6 +3,7 @@ A web bot that automatically opens the browser, logs into twitter and opens up n
 """
 import os
 from pathlib import Path
+import time
 
 from dotenv import load_dotenv
 from selenium import webdriver
@@ -52,4 +53,5 @@ search_field.send_keys(Keys.ENTER)
 notifications_btn = driver.find_element(By.XPATH, "//a[@data-testid='AppTabBar_Notifications_Link']")
 notifications_btn.click()
 
+time.sleep(5)
 driver.quit()
