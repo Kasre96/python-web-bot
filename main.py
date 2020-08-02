@@ -20,8 +20,12 @@ load_dotenv(dotenv_path=env_path, override=True)
 u_name = os.getenv('USERNAME')
 u_pass = os.getenv('PASSWORD')
 
+# chrome driver options
+options = webdriver.ChromeOptions()
+options.add_argument('--start-maximized')
+
 # Initiate browser
-driver = webdriver.Chrome(ChromeDriverManager().install())
+driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
 
 # Open web page
 driver.get('https://twitter.com')
